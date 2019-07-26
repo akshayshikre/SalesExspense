@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:text="From Date: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"/>
+
+        <EditText
+            android:id="@+id/etFromDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="0.75"
+            android:hint="From Date"
+            android:inputType="none"
+            android:focusableInTouchMode="true"
+            android:cursorVisible="false"
+            android:focusable="false"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:text="To Date: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            />
+
+        <EditText
+            android:id="@+id/etToDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="0.75"
+            android:hint="To Date"
+            android:inputType="none"
+            android:focusableInTouchMode="true"
+            android:cursorVisible="false"
+            android:focusable="false"/>
+    </LinearLayout>
+    <CheckBox
+        android:id="@+id/cbcatwise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="Get Expense Report Categorywise"
+        android:layout_gravity="center"/>
+</LinearLayout>

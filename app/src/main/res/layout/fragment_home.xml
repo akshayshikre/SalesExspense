@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Expense :"
+                android:textSize="20sp"
+                android:gravity="center"/>
+
+            <Button
+                android:id="@+id/addCategory"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:text="Add Expense Category"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center"/>
+
+            <Button
+                android:id="@+id/recordExpense"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:text="Record Expense"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center"/>
+
+            <Button
+                android:id="@+id/expenseReport"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:text="Expense Report"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sales :"
+                android:textSize="20sp"
+                android:gravity="center"/>
+
+
+            <Button
+                android:id="@+id/addMenuCategory"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:text="Add Menu Category"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center"/>
+
+            <Button
+                android:id="@+id/addItem"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:text="Add Menu Item"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center"/>
+
+            <Button
+                android:id="@+id/recordSales"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:text="Record sale"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center"/>
+
+            <Button
+                android:id="@+id/recordSales2"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:text="Record sale 2"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center"/>
+
+
+            <Button
+                android:id="@+id/salesReport"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:text="Sales Report"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimaryDark"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                />
+
+            <Button
+                android:id="@+id/deleteRecords"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:text="Delete Reports"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+
+        </ScrollView>
+    </LinearLayout>
+
+</FrameLayout>

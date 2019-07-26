@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvDialItemTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Menu Item Title"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:layout_margin="10dp"/>
+        <TextView
+            android:id="@+id/tvDialItemCat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Menu category: "
+            android:textSize="20sp"
+            android:layout_margin="10dp"/>
+        <TextView
+            android:id="@+id/tvItemPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Item Amount: "
+            android:textSize="20sp"
+            android:layout_margin="10dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_margin="10dp">
+            <Button
+                android:id="@+id/btnDialItemAdd"
+                android:text="+"
+                android:textSize="25sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+            <EditText
+                android:id="@+id/etDialQuant"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:inputType="number"
+                android:text="0" />
+            <Button
+                android:id="@+id/btnDialItemSub"
+                android:text="-"
+                android:textSize="25sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvDialCalcAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Amout : 0 Rs."
+        android:textSize="20sp" />
+
+
+
+
+</LinearLayout>
