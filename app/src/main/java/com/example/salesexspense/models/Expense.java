@@ -14,7 +14,7 @@ public class Expense {
     private String date;
 
     @ColumnInfo(name = "created_date")
-    private String createdDate;
+    private String created_date;
 
     @ColumnInfo(name = "category")
     private String category;
@@ -28,19 +28,20 @@ public class Expense {
     public Expense() {
     }
 
-    public Expense(int id, String date, String category, String description, String amount, String createdDate) {
+    public Expense(int id, String date, String category, String description, String amount, String created_date) {
         this.id = id;
         this.date = date;
         this.category = category;
         this.description = description;
         this.amount = amount;
-        this.createdDate = createdDate;
+        this.created_date = created_date;
     }
 
     @Override
     public String toString() {
         return "Expense{" +
                 "id=" + id +
+                ", created_date='" + created_date + '\'' +
                 ", date='" + date + '\'' +
                 ", category='" + category + '\'' +
                 ", description='" + description + '\'' +
@@ -88,11 +89,11 @@ public class Expense {
         this.amount = amount;
     }
 
-    public String getCreatedDate() {
-        return createdDate;
+    public String getCreated_date() {
+        return created_date;
     }
 
-    public void setCreatedDate(String createdDate) {
-        this.createdDate = createdDate;
+    public void setCreated_date(String created_date) {
+        this.created_date = created_date;
     }
 }

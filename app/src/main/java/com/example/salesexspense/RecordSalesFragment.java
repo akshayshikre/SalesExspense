@@ -52,6 +52,11 @@ public class RecordSalesFragment extends Fragment implements View.OnClickListene
     List<Sales> allSales;
     MenuItemAdapter adapter;
     ArrayList<RecordSaleDataItem> recordSaleDataItemsArrayList;
+    String myFormat = "dd-MM-yyyy"; //In which you need put here
+    SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+
+
+
     public RecordSalesFragment() {
         // Required empty public constructor
     }
@@ -137,8 +142,6 @@ public class RecordSalesFragment extends Fragment implements View.OnClickListene
     }
 
     private void updateCurrentLabel() {
-        String myFormat = "dd-MM-yyyy"; //In which you need put here
-        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
         date.setText(sdf.format(new Date()));
     }
@@ -205,9 +208,10 @@ public class RecordSalesFragment extends Fragment implements View.OnClickListene
                                     ""+recordSaleDataItemsArrayList.get(i).getItem().getId(),
                                     ""+recordSaleDataItemsArrayList.get(i).getQuantity(),
                                     ""+recordSaleDataItemsArrayList.get(i).getAmount(),
-                                    String.valueOf(lastiSaleId),
-                                    String.valueOf(totalSale),
-                                    saleType));
+                                    ""+String.valueOf(lastiSaleId),
+                                    ""+String.valueOf(totalSale),
+                                    ""+saleType,
+                                    ""+sdf.format(new Date())));
 
                         }
                     }
@@ -221,9 +225,10 @@ public class RecordSalesFragment extends Fragment implements View.OnClickListene
                                     "" + recordSaleDataItemsArrayList.get(i).getItem().getId(),
                                     "" + recordSaleDataItemsArrayList.get(i).getQuantity(),
                                     "" + recordSaleDataItemsArrayList.get(i).getAmount(),
-                                    String.valueOf(lastiSaleId+1),
-                                    String.valueOf(totalSale),
-                                    saleType));
+                                    ""+String.valueOf(lastiSaleId+1),
+                                    ""+String.valueOf(totalSale),
+                                    ""+saleType,
+                                    ""+sdf.format(new Date())));
                         }
                     }
                 }

@@ -67,6 +67,8 @@ public class ExpenseReportFragment extends Fragment implements ExpenseAdapter.Ed
     ArrayList<String> expenseDataHashMapKeysArrayList = new ArrayList<String>();
     HashMap<String, Expense> refreshedExpenseDataHashMap = new HashMap<String,Expense>();
     ArrayList<String> refreshedExpenseDataHashMapKeysArrayList = new ArrayList<String>();
+    String myFormat = "dd-MM-yyyy"; //In which you need put here
+    SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
     //CatWise
     ArrayList<String> expenseDataHashMapCatWiseKeys = new ArrayList<String>();
@@ -126,7 +128,8 @@ public class ExpenseReportFragment extends Fragment implements ExpenseAdapter.Ed
 
         //For Date wise
         for(Expense e: expenseData){
-            expenseDataHashMap.put(String.valueOf( e.getId()), new Expense( e.getId(), e.getDate(), e.getCategory(), e.getDescription(), e.getAmount()));
+            expenseDataHashMap.put(String.valueOf( e.getId()), new Expense( e.getId(), e.getDate(), e.getCategory(),
+                    e.getDescription(), e.getAmount(), e.getCreated_date()));
         }
 
         for(Expense e :expenseDataHashMap.values()){
@@ -404,7 +407,7 @@ public class ExpenseReportFragment extends Fragment implements ExpenseAdapter.Ed
             ArrayList<Expense> expenseArrayList = new ArrayList<Expense>();
             for(Expense e: dateWiseExpenseData){
                 if(cat.equals(e.getCategory())) {
-                    expenseArrayList.add(new Expense(e.getId(), e.getDate(), e.getCategory(), e.getDescription(), e.getAmount()));
+                    expenseArrayList.add(new Expense(e.getId(), e.getDate(), e.getCategory(), e.getDescription(), e.getAmount(), e.getCreated_date()));
                     FinalSaleAmount += Integer.parseInt(e.getAmount());
                 }
             }
@@ -459,6 +462,7 @@ public class ExpenseReportFragment extends Fragment implements ExpenseAdapter.Ed
                     fw.append("Expense Date");fw.append(',');
                     fw.append("Expense Amount");fw.append(',');
                     fw.append("Expense Description");fw.append(',');
+                    fw.append("Expense Created Date");fw.append(',');
                     fw.append('\n');
 
                     int row = 1;
@@ -478,6 +482,7 @@ public class ExpenseReportFragment extends Fragment implements ExpenseAdapter.Ed
                             fw.append(" "+e.getDate());fw.append(',');
                             fw.append(""+e.getAmount());fw.append(',');
                             fw.append(""+e.getDescription());fw.append(',');
+                            fw.append(" "+e.getCreated_date());fw.append(',');
                             fw.append('\n');
                             row++;
                             totalAmount += Integer.parseInt(e.getAmount());
@@ -557,6 +562,7 @@ public class ExpenseReportFragment extends Fragment implements ExpenseAdapter.Ed
                     fw.append("Expense Category");fw.append(',');
                     fw.append("Expense Amount");fw.append(',');
                     fw.append("Expense Description");fw.append(',');
+                    fw.append("Expense Created Date");fw.append(',');
                     fw.append('\n');
 
                     int row = 1;
@@ -567,9 +573,10 @@ public class ExpenseReportFragment extends Fragment implements ExpenseAdapter.Ed
                             fw.append(""+row);fw.append(',');
                             fw.append(""+e.getId());fw.append(',');
                             fw.append(" "+e.getDate());fw.append(',');
-                            fw.append(e.getCategory());fw.append(',');
-                            fw.append(e.getAmount());fw.append(',');
-                            fw.append(e.getDescription());fw.append(',');
+                            fw.append(""+e.getCategory());fw.append(',');
+                            fw.append(""+e.getAmount());fw.append(',');
+                            fw.append(""+e.getDescription());fw.append(',');
+                            fw.append(" "+e.getCreated_date());fw.append(',');
                             fw.append('\n');
                             row++;
                         totalAmount += Integer.parseInt(e.getAmount());
@@ -713,7 +720,7 @@ public class ExpenseReportFragment extends Fragment implements ExpenseAdapter.Ed
                         categorySpinner.getSelectedItem().toString(),etDescription.getText().toString(),""+etAmount.getText());
                 if(result>0){
                     refreshedExpenseDataHashMap.put(""+expense.getId(),new Expense(expense.getId(), etDate.getText().toString(),
-                            categorySpinner.getSelectedItem().toString(), etDescription.getText().toString(), etAmount.getText().toString()));
+                            categorySpinner.getSelectedItem().toString(), etDescription.getText().toString(), etAmount.getText().toString(), expense.getCreated_date()));
 //                    adapter = new ExpenseAdapter()
                     adapter.notifyItemChanged(position);
                     adapter.notifyItemRangeChanged(position, refreshedExpenseDataHashMapKeysArrayList.size());

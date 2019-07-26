@@ -25,13 +25,16 @@ public class EditedExpense {
     @ColumnInfo(name = "description")
     private String description;
 
+    @ColumnInfo(name = "edit_description")
+    private String edit_description;
+
     @ColumnInfo(name = "amount")
     private String amount;
 
     public EditedExpense() {
     }
 
-    public EditedExpense(int id, String date, String category, String description, String amount, String expenseId, String created_date) {
+    public EditedExpense(int id, String date, String category, String description, String amount, String expenseId, String created_date, String edit_description) {
         this.id = id;
         this.date = date;
         this.category = category;
@@ -39,18 +42,10 @@ public class EditedExpense {
         this.amount = amount;
         this.expenseId = expenseId;
         this.created_date = created_date;
+        this.edit_description = edit_description;
     }
 
-    @Override
-    public String toString() {
-        return "Expense{" +
-                "id=" + id +
-                ", date='" + date + '\'' +
-                ", category='" + category + '\'' +
-                ", description='" + description + '\'' +
-                ", amount='" + amount + '\'' +
-                '}';
-    }
+
 
     public int getId() {
         return id;
@@ -100,11 +95,19 @@ public class EditedExpense {
         this.expenseId = expenseId;
     }
 
-    public String getCreatedDate() {
+    public String getCreated_date() {
         return created_date;
     }
 
-    public void setCreatedDate(String created_date) {
+    public void setCreated_date(String created_date) {
         this.created_date = created_date;
+    }
+
+    public String getEdit_description() {
+        return edit_description;
+    }
+
+    public void setEdit_description(String edit_description) {
+        this.edit_description = edit_description;
     }
 }

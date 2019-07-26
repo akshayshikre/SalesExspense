@@ -19,6 +19,7 @@ import com.example.salesexspense.models.Expense;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -27,10 +28,12 @@ import java.util.Locale;
  */
 public class RecordExpenseFragment extends Fragment implements View.OnClickListener {
 
-    private EditText date,description,amount;
+    private EditText date, description, amount;
     private Spinner categorySpinner;
     private Button addExpense;
     Calendar myCalendar = Calendar.getInstance();
+    String myFormat = "dd-MM-yyyy"; //In which you need put here
+    SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
     public RecordExpenseFragment() {
         // Required empty public constructor
@@ -104,6 +107,7 @@ public class RecordExpenseFragment extends Fragment implements View.OnClickListe
                 expense.setDescription(edesc);
                 expense.setAmount(eamonut);
                 expense.setCategory(ecat);
+                expense.setCreated_date(""+sdf.format(new Date()));
 
                 MainActivity.myAppDatabase.myDao().addExpense(expense);
                 Toast.makeText(getActivity(),"Expense added Successfully ",Toast.LENGTH_SHORT).show();

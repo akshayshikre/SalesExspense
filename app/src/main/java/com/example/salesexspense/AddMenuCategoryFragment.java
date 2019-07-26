@@ -16,8 +16,7 @@ import com.example.salesexspense.models.MenuCategory;
 public class AddMenuCategoryFragment extends Fragment implements View.OnClickListener {
 
     private EditText name , description, color;
-    private Button  addCategory ;
-
+    private Button  addCategory;
 
     public AddMenuCategoryFragment() {
         // Required empty public constructor

@@ -13,6 +13,21 @@ public class Sales {
     @ColumnInfo(name = "date")
     private String date;
 
+    @Override
+    public String toString() {
+        return "Sales{" +
+                "id=" + id +
+                ", date='" + date + '\'' +
+                ", created_date='" + created_date + '\'' +
+                ", item='" + item + '\'' +
+                ", quantity='" + quantity + '\'' +
+                ", amount='" + amount + '\'' +
+                ", sale_id='" + sale_id + '\'' +
+                ", sale_amount='" + sale_amount + '\'' +
+                ", sale_type='" + sale_type + '\'' +
+                '}';
+    }
+
     @ColumnInfo(name = "created_date")
     private String created_date;
 
@@ -110,11 +125,11 @@ public class Sales {
         this.sale_type = sale_type;
     }
 
-    public String getCreatedDate() {
+    public String getCreated_date() {
         return created_date;
     }
 
-    public void setCreatedDate(String created_date) {
+    public void setCreated_date(String created_date) {
         this.created_date = created_date;
     }
 }

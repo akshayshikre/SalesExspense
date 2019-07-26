@@ -35,11 +35,11 @@ public class EditedSales {
     @ColumnInfo(name = "sale_type")
     private String sale_type;
 
-    @ColumnInfo(name = "description")
-    private String description;
+    @ColumnInfo(name = "edit_description")
+    private String edit_description;
 
 
-    public EditedSales(String date, String item, String quantity, String amount, String sale_id, String sale_amount, String sale_type, String created_date, String description) {
+    public EditedSales(String date, String item, String quantity, String amount, String sale_id, String sale_amount, String sale_type, String created_date, String edit_description) {
         this.date = date;
         this.item = item;
         this.quantity = quantity;
@@ -48,7 +48,7 @@ public class EditedSales {
         this.sale_amount = sale_amount;
         this.sale_type = sale_type;
         this.created_date = created_date;
-        this.description = description;
+        this.edit_description = edit_description;
     }
 
     public String getSale_id() {
@@ -123,11 +123,11 @@ public class EditedSales {
         this.created_date = created_date;
     }
 
-    public String getDescription() {
-        return description;
+    public String getEdit_description() {
+        return edit_description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setEdit_description(String edit_description) {
+        this.edit_description = edit_description;
     }
 }
